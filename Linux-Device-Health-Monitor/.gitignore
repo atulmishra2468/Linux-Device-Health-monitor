@@ -1,0 +1,30 @@
+# Linux Device Health Monitor .gitignore
+
+# Object files & executables
+*.o
+*.out
+monitor
+tests/test_runner
+
+# Linux Kernel Build artifacts
+driver/*.ko
+driver/*.mod
+driver/*.mod.c
+driver/*.o
+driver/.*.cmd
+driver/.tmp_versions/
+driver/modules.order
+driver/Module.symvers
+
+# Build output directories
+build/
+bin/
+
+# Application logs (preserve directory)
+logs/*.log
+
+# Editor / IDE artifacts
+.vscode/
+.idea/
+*.swp
+*~

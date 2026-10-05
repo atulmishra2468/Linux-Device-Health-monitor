@@ -1,0 +1,50 @@
+name: Linux CI & Build Verification
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    name: Build & Test on Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Toolchain and Linux Kernel Headers
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential linux-headers-$(uname -r) g++ make cmake kmod
+
+      - name: Verify Development Environment
+        run: |
+          gcc --version
+          g++ --version
+          make --version
+          uname -r
+
+      - name: Compile Linux Character Device Driver
+        run: |
+          cd driver
+          make
+
+      - name: Compile C++ User-Space Application
+        run: |
+          make clean
+          make
+
+      - name: Run C++ Unit Tests (Makefile)
+        run: |
+          make test
+
+      - name: Build with CMake & Run CTest
+        run: |
+          mkdir -p build_cmake
+          cd build_cmake
+          cmake ..
+          cmake --build .
+          ctest --output-on-failure

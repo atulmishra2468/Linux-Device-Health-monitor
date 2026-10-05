@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-canvas: #0f131c;
+    --color-surface-lowest: #0a0e16;
+    --color-surface-low: #181c24;
+    --color-surface: #0f131c;
+    --color-surface-container: #1c2028;
+    --color-surface-high: #262a33;
+    --color-surface-highest: #31353e;
+    --color-primary: #4edea3;
+    --color-secondary: #4cd7f6;
+    --color-tertiary: #d0bcff;
+    --color-error: #ffb4ab;
+    --color-on-surface: #dfe2ee;
+    --color-on-surface-variant: #bbcabf;
+    --color-outline: #86948a;
+  }
+
+  body {
+    background-color: #0f131c;
+    color: #dfe2ee;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono, [class*="font-label-code"], [class*="font-metric-num"] {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom scrollbar for terminals */
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.terminal-scroll::-webkit-scrollbar-track {
+  background: #0a0e16;
+}
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: #262a33;
+  border-radius: 3px;
+}
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #31353e;
+}

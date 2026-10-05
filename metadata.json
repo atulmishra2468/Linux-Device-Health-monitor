@@ -1,0 +1,6 @@
+{
+  "name": "SysMonitor - Linux Kernel Driver & Observability",
+  "description": "Linux character device driver (/dev/sysmonitor) and C++ systems observability suite with live ring buffer telemetry, IOCTL interface, process inspector, and 15-step blueprint.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
