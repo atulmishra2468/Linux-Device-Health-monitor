@@ -12,7 +12,7 @@
 
 ## 1. Project Title
 **Linux Device Health Monitor – A C++ System Monitoring Application with a Custom Linux Character Device Driver**  
-**Author:** Atul Mishra (`atulmishra2468@gmail.com`)
+
 
 ---
 
