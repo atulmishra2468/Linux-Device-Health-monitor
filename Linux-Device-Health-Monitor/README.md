@@ -24,18 +24,17 @@ The **Linux Device Health Monitor** is an end-to-end systems programming project
 ---
 
 ## 3. Problem Statement
-Systems programmers must master how operating systems isolate user programs from kernel-level hardware operations. While high-level scripting languages abstract these boundaries away, low-level Linux systems programming demands direct interaction with the Virtual File System (VFS), POSIX system calls, memory safety boundaries (`copy_to_user`/`copy_from_user`), and kernel loadable modules. This project provides an educational, production-grade reference architecture illustrating these core tenets.
+Linux health information is scattered across many command-line tools, with no single live view and no simple way for programs to read it from the kernel. This project builds a complete pipeline, from kernel driver to C++ monitor to React dashboard, so system health can be seen at a glance.
 
 ---
 
 ## 4. Objectives
-- Develop a loadable Linux kernel module (LKM) in C using standard Linux kernel APIs.
-- Dynamically register a character device and automatically create the `/dev/sysmonitor` node using `udev`.
-- Implement safe user-kernel data transfer handling memory boundaries.
-- Build a modular, Object-Oriented C++17 monitoring application without external runtime dependencies (no Python, no Node.js).
-- Parse the `/proc` virtual filesystem directly for real-time CPU, RAM, and process state telemetry.
-- Demonstrate Linux File Descriptor mechanics (`File Descriptor = 3`).
-- Maintain persistent, thread-safe application event auditing in `logs/system.log`.
+Build a kernel driver. Develop a Linux character device driver (/dev/sysmonitor) that exposes system data to user space through a simple file interface.
+Collect metrics efficiently. Develop a C++17 monitor that reads live data from the kernel (including /proc) at regular intervals and prepares it for display.
+Visualize health live. Create a React dashboard that shows key metrics such as CPU, memory, uptime and load in one easy-to-read view.
+Keep the design modular. Separate the driver, monitor and dashboard into independent layers, so each can be tested and improved on its own.
+Validate on a real system. Test the full pipeline on Ubuntu Linux and confirm it works from loading the module to viewing the dashboard.
+Learn the full stack. Gain hands-on experience with kernel module development, systems programming in C++ and modern frontend development.
 
 ---
 
