@@ -30,10 +30,15 @@ Linux health information is scattered across many command-line tools, with no si
 
 ## 4. Objectives
 Build a kernel driver. Develop a Linux character device driver (/dev/sysmonitor) that exposes system data to user space through a simple file interface.
+
 Collect metrics efficiently. Develop a C++17 monitor that reads live data from the kernel (including /proc) at regular intervals and prepares it for display.
+
 Visualize health live. Create a React dashboard that shows key metrics such as CPU, memory, uptime and load in one easy-to-read view.
+
 Keep the design modular. Separate the driver, monitor and dashboard into independent layers, so each can be tested and improved on its own.
+
 Validate on a real system. Test the full pipeline on Ubuntu Linux and confirm it works from loading the module to viewing the dashboard.
+
 Learn the full stack. Gain hands-on experience with kernel module development, systems programming in C++ and modern frontend development.
 
 ---
